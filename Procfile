@@ -1,1 +1,1 @@
-web: nekozu
+web: nekozu app:main
