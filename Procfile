@@ -1,1 +1,1 @@
-web: nekozu app:main
+web: import app:main
