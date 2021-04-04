@@ -1,1 +1,1 @@
-web: python3 -m nekozu.py
+web: python3 -m nekozu
