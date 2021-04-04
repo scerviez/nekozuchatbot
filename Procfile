@@ -1,1 +1,1 @@
-web: import app:main
+web: python3 -m Nekozu
