@@ -57,6 +57,22 @@ def other(message):
 	bot.reply_to(message,pesan)
 
 
+@bot.message_handler(func=lambda m: True, content_types=["new_chat_members"])
+def on_user_joins(new_chat_members):
+    name = new_chat_members.from_user.first_name
+    last_name = new_chat_members.from_user.last_name
+    if (new_chat_members.from_user.last_name, 'last_name') is not None:
+        name += " {}".format(last_name)
+
+    username = new_chat_members.from_user.username
+    id_telegram = new_chat_members.from_user.id
+    menu = 'welcome'
+
+    pesan = 'Halo, Selamat datang <b>{}</b> di<b>Grup</b>.  Semoga tenang ya! Patuhi aturan.'
+
+
+    bot.reply_to(new_chat_members, pesan.format(name),parse_mode='HTML')
+
 
 @bot.callback_query_handler(func=lambda msg: msg.data == '/quote')
 def cbquote(message):
